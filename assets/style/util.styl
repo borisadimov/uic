@@ -1,0 +1,75 @@
+text-color = #000
+bg-color = #fff
+sunroof-orange-color = #f68e56
+sunroof-yellow-color = #fceac2
+
+font-stack = Source Sans Pro, sans-serif
+header-font-stack = Source Sans Pro, sans-serif
+
+logo-size = 56px
+mobile-padding = 24px
+tablet-padding = 48px
+desktop-padding = 96px
+
+
+// Media query shortcuts. above/below are inclusive/exclusive.
+mobile = 375px
+tablet = 768px
+desktop = 1024px
+
+above(w)
+  @media screen and (min-width: w)
+    {block}
+
+below(w)
+  @media screen and (max-width: w - 1)
+    {block}
+
+between(w1, w2)
+  @media screen and (min-width: w1) and (max-width: w2 - 1)
+    {block}
+
+text-h1()
+  background-image none  // override underline
+  font-family header-font-stack
+  font-size 40px
+  font-weight bold
+  line-height 44px
+  +between(mobile, tablet)
+    font-size 44px
+    line-height 44px
+  +above(tablet)
+    font-size 64px
+    line-height 68px
+    max-width 66%
+
+text-h2()
+  font-family header-font-stack
+  font-size 24px
+  font-weight bold
+  line-height 28px
+  +above(tablet)
+    font-size 36px
+    line-height 40px
+
+text-h3()
+  color sunroof-orange-color
+  font-family font-stack
+  font-size 16px
+  font-style italic
+  letter-spacing -0.3px
+  line-height 24px
+
+text-body()
+  font-family font-stack
+  font-size 17px
+  line-height 22px
+  +above(tablet)
+    font-size 20px
+    line-height 31px
+
+text-small()
+  font-family font-stack
+  +above(tablet)
+    font-size 16px
+    line-height 24px
